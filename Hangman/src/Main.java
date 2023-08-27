@@ -19,5 +19,17 @@ public class Main {
         String word = words.get(rand.nextInt(words.size()));
         System.out.println(word);
 
+        List<Character> playGuesses = new ArrayList<>();
+
+        for (int i = 0; i < word.length(); i++){
+            if (playGuesses.contains(word.charAt(i))){
+                System.out.println(word.charAt(i));
+            }
+            else {
+                System.out.print("-");
+            }
+        }
+        System.out.println();
+
     }
 }
