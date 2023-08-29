@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
         Scanner scanner = new Scanner(new File("D:/Lectures/Programming/Java/Hangman-Game-in-Java-/words.txt/"));
+        Scanner keyboard = new Scanner(System.in);
 
         List<String> words = new ArrayList<>();
         while (scanner.hasNext()) {
@@ -23,18 +24,21 @@ public class Main {
 
         printWordState(word, playerGuesses);
 
-        System.out.println("Please enter a letter");
+        System.out.println("Please enter a letter: ");
+        String letterGuess = keyboard.nextLine();
+        playerGuesses.add(letterGuess.charAt(0));
 
-        private static void printWordState(String word, List<Character> playerGuesses){
-            for (int i = 0; i < word.length(); i++){
-                if (playerGuesses.contains(word.charAt(i))){
-                    System.out.println(word.charAt(i));
-                }
-                else {
-                    System.out.print("-");
-                }
+        printWordState(word, playerGuesses);
+    }
+    private static void printWordState(String word, List<Character> playerGuesses){
+        for (int i = 0; i < word.length(); i++){
+            if (playerGuesses.contains(word.charAt(i))){
+                System.out.println(word.charAt(i));
             }
-            System.out.println();
+            else {
+                System.out.print("-");
+            }
         }
+        System.out.println();
     }
 }
