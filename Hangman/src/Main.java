@@ -19,17 +19,22 @@ public class Main {
         String word = words.get(rand.nextInt(words.size()));
         System.out.println(word);
 
-        List<Character> playGuesses = new ArrayList<>();
+        List<Character> playerGuesses = new ArrayList<>();
 
-        for (int i = 0; i < word.length(); i++){
-            if (playGuesses.contains(word.charAt(i))){
-                System.out.println(word.charAt(i));
+        printWordState(word, playerGuesses);
+
+        System.out.println("Please enter a letter");
+
+        private static void printWordState(String word, List<Character> playerGuesses){
+            for (int i = 0; i < word.length(); i++){
+                if (playerGuesses.contains(word.charAt(i))){
+                    System.out.println(word.charAt(i));
+                }
+                else {
+                    System.out.print("-");
+                }
             }
-            else {
-                System.out.print("-");
-            }
+            System.out.println();
         }
-        System.out.println();
-
     }
 }
