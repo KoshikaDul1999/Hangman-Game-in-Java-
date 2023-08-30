@@ -24,12 +24,19 @@ public class Main {
 
         printWordState(word, playerGuesses);
 
-        System.out.println("Please enter a letter: ");
-        String letterGuess = keyboard.nextLine();
-        playerGuesses.add(letterGuess.charAt(0));
+        getPlayerGuess(keyboard, word, playerGuesses);
 
-        printWordState(word, playerGuesses);
     }
+
+    private static void getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses){
+            System.out.println("Please enter a letter: ");
+            String letterGuess = keyboard.nextLine();
+            playerGuesses.add(letterGuess.charAt(0));
+
+            printWordState(word, playerGuesses);
+    }
+
+
     private static void printWordState(String word, List<Character> playerGuesses){
         for (int i = 0; i < word.length(); i++){
             if (playerGuesses.contains(word.charAt(i))){
