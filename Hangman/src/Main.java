@@ -28,10 +28,18 @@ public class Main {
             getPlayerGuess(keyboard, word, playerGuesses);
 
             if (printWordState(word, playerGuesses)){
+                System.out.println("You win!");
                 break;
             }
+            System.out.println("Please enter your guess for the word:");
+            if (keyboard.nextLine().equals(word)){
+                System.out.println("You win!");
+                break;
+            }
+            else {
+                System.out.println("Nope! Try again.");
+            }
         }
-        System.out.println("You win!");
     }
 
     private static void getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses){
