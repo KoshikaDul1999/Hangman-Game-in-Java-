@@ -24,8 +24,14 @@ public class Main {
 
         printWordState(word, playerGuesses);
 
-        getPlayerGuess(keyboard, word, playerGuesses);
+        while (true) {
+            getPlayerGuess(keyboard, word, playerGuesses);
 
+            if (printWordState(word, playerGuesses)){
+                break;
+            }
+        }
+        System.out.println("You win!");
     }
 
     private static void getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses){
@@ -37,15 +43,18 @@ public class Main {
     }
 
 
-    private static void printWordState(String word, List<Character> playerGuesses){
+    private static boolean printWordState(String word, List<Character> playerGuesses){
+        int correctCount = 0;
         for (int i = 0; i < word.length(); i++){
             if (playerGuesses.contains(word.charAt(i))){
                 System.out.println(word.charAt(i));
+                correctCount++;
             }
             else {
                 System.out.print("-");
             }
         }
         System.out.println();
+        return (word.length() == correctCount);
     }
 }
