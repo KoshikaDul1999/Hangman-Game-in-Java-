@@ -22,9 +22,8 @@ public class Main {
 
         List<Character> playerGuesses = new ArrayList<>();
 
-        printWordState(word, playerGuesses);
-
         while (true) {
+            printWordState(word, playerGuesses);
             getPlayerGuess(keyboard, word, playerGuesses);
 
             if (printWordState(word, playerGuesses)){
