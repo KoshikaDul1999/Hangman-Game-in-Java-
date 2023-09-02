@@ -69,12 +69,12 @@ public class Main {
         }
     }
 
-    private static void getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses){
+    private static boolean getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses){
             System.out.println("Please enter a letter: ");
             String letterGuess = keyboard.nextLine();
             playerGuesses.add(letterGuess.charAt(0));
 
-            printWordState(word, playerGuesses);
+            return word.contains(letterGuess);
     }
 
 
