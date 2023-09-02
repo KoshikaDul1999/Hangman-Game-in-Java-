@@ -22,7 +22,35 @@ public class Main {
 
         List<Character> playerGuesses = new ArrayList<>();
 
+        int wrongCount = 0;
         while (true) {
+            System.out.println("------------");
+            System.out.println(" |      |");
+            if (wrongCount >= 1) {
+                System.out.println(" O");
+            }
+            if (wrongCount >= 2){
+                System.out.println("\\ ");
+                if (wrongCount >= 3) {
+                    System.out.println("/");
+                }
+                else {
+                    System.out.println("");
+                }
+            }
+            if (wrongCount >= 4) {
+                System.out.println(" |");
+            }
+            if (wrongCount >= 5){
+                System.out.println("/ ");
+                if (wrongCount >= 6) {
+                    System.out.println("\\ ");
+                }
+                else {
+                    System.out.println("");
+                }
+            }
+
             printWordState(word, playerGuesses);
             getPlayerGuess(keyboard, word, playerGuesses);
 
