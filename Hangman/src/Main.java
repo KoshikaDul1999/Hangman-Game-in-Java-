@@ -52,7 +52,9 @@ public class Main {
             }
 
             printWordState(word, playerGuesses);
-            getPlayerGuess(keyboard, word, playerGuesses);
+            if (!getPlayerGuess(keyboard, word, playerGuesses)){
+                wrongCount++;
+            }
 
             if (printWordState(word, playerGuesses)){
                 System.out.println("You win!");
