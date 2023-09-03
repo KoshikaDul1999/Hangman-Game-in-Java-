@@ -26,6 +26,11 @@ public class Main {
         while (true) {
             printHangedMan(wrongCount);
 
+            if (wrongCount >= 6){
+                System.out.println("You lose!");
+                break;
+            }
+
             printWordState(word, playerGuesses);
             if (!getPlayerGuess(keyboard, word, playerGuesses)){
                 wrongCount++;
