@@ -24,32 +24,38 @@ public class Main {
 
         int wrongCount = 0;
         while (true) {
-            System.out.println("------------");
-            System.out.println(" |      |");
-            if (wrongCount >= 1) {
-                System.out.println(" O");
-            }
-            if (wrongCount >= 2){
-                System.out.println("\\ ");
-                if (wrongCount >= 3) {
-                    System.out.println("/");
+            printHangedMan(Integer wrongCount)
+
+        private static void printHangedMan(Integer wrongCount){
+                System.out.println("------------");
+                System.out.println(" |      |");
+                if (wrongCount >= 1) {
+                    System.out.println(" O");
                 }
-                else {
-                    System.out.println("");
-                }
-            }
-            if (wrongCount >= 4) {
-                System.out.println(" |");
-            }
-            if (wrongCount >= 5){
-                System.out.println("/ ");
-                if (wrongCount >= 6) {
+                if (wrongCount >= 2){
                     System.out.println("\\ ");
+                    if (wrongCount >= 3) {
+                        System.out.println("/");
+                    }
+                    else {
+                        System.out.println("");
+                    }
                 }
-                else {
-                    System.out.println("");
+                if (wrongCount >= 4) {
+                    System.out.println(" |");
                 }
-            }
+                if (wrongCount >= 5){
+                    System.out.println("/ ");
+                    if (wrongCount >= 6) {
+                        System.out.println("\\ ");
+                    }
+                    else {
+                        System.out.println("");
+                    }
+                }
+                System.out.println("");
+                System.out.println("");
+        }
 
             printWordState(word, playerGuesses);
             if (!getPlayerGuess(keyboard, word, playerGuesses)){
