@@ -8,16 +8,26 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
 
-        Scanner scanner = new Scanner(new File("D:/Lectures/Programming/Java/Hangman-Game-in-Java-/words.txt/"));
         Scanner keyboard = new Scanner(System.in);
+        System.out.println("1 or 2 players?");
+        String players = keyboard.nextLine();
+        String word;
+        if (players.equals("1")){
+            Scanner scanner = new Scanner(new File("D:/Lectures/Programming/Java/Hangman-Game-in-Java-/words.txt/"));
 
-        List<String> words = new ArrayList<>();
-        while (scanner.hasNext()) {
-            words.add(scanner.nextLine());
+            List<String> words = new ArrayList<>();
+            while (scanner.hasNext()) {
+                words.add(scanner.nextLine());
+            }
+
+            Random rand = new Random();
+            word = words.get(rand.nextInt(words.size()));
+        }
+        else {
+            System.out.println("Player 1, please enter your word");
+            word = keyboard.nextLine();
         }
 
-        Random rand = new Random();
-        String word = words.get(rand.nextInt(words.size()));
         System.out.println(word);
 
         List<Character> playerGuesses = new ArrayList<>();
