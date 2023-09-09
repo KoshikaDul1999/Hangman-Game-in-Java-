@@ -69,6 +69,40 @@ public class Main {
         }
     }
 
+    private static void printHangedMan(Integer wrongCount) {
+        System.out.println(" -------");
+        System.out.println(" |     |");
+        if (wrongCount >= 1) {
+            System.out.println(" O");
+        }
+
+        if (wrongCount >= 2) {
+            System.out.print("\\ ");
+            if (wrongCount >= 3) {
+                System.out.println("/");
+            }
+            else {
+                System.out.println("");
+            }
+        }
+
+        if (wrongCount >= 4) {
+            System.out.println(" |");
+        }
+
+        if (wrongCount >= 5) {
+            System.out.print("/ ");
+            if (wrongCount >= 6) {
+                System.out.println("\\");
+            }
+            else {
+                System.out.println("");
+            }
+        }
+        System.out.println("");
+        System.out.println("");
+    }
+
     private static boolean getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses){
             System.out.println("Please enter a letter: ");
             String letterGuess = keyboard.nextLine();
