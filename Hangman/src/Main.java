@@ -103,12 +103,12 @@ public class Main {
         System.out.println("");
     }
 
-    private static boolean getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses){
-            System.out.println("Please enter a letter: ");
-            String letterGuess = keyboard.nextLine();
-            playerGuesses.add(letterGuess.charAt(0));
+    private static boolean getPlayerGuess(Scanner keyboard, String word, List<Character> playerGuesses) {
+        System.out.println("Please enter a letter:");
+        String letterGuess = keyboard.nextLine();
+        playerGuesses.add(letterGuess.charAt(0));
 
-            return word.contains(letterGuess);
+        return word.contains(letterGuess);
     }
 
 
